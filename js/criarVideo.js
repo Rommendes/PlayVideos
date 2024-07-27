@@ -11,10 +11,12 @@ async function criarVideo(evento){
     const descricao = Math.floor(Math.random() * 10).toString();   
  //A descrição é de acordo com a interação do usuário = visualizações
    
-
+try {
      await conectaApi.criaVideo(titulo, descricao, url, imagem)
 
      window.location.href = "../pages/envio-concluido.html";
+}catch(e){
+    alert(e);
 }
-
+}
 formulario.addEventListener("submit", evento => criarVideo(evento))

@@ -19,11 +19,16 @@ export default function constroiCard (titulo, descricao, url, imagem){
     return video;
 }
 async function listaVideos(){
-    
+    try{ 
         const listaApi = await conectaApi.listaVideos();
     listaApi.forEach(elemento => lista.appendChild(
         constroiCard(elemento.titulo, elemento.descricao, elemento.url, elemento.imagem)));
         console.log(listaApi);
+    }catch{
+        lista.innerHTML = `<p Revise class="mensagem__titulo" > Não foi possível acessar os vídeos. <br> Revise seu código em  conectaVideos.</p>
+        `;
+      
     }
+}
 
 listaVideos()

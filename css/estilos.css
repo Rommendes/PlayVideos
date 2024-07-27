@@ -67,12 +67,37 @@ body {
     width: 30%;
 }
 
-.mensagem__titulo {
+/* .mensagem__titulo {
     color: var(--azul-medio);
     font-weight: bold;
     font-size: 21px;
-}
+    
 
+} */
+.mensagem__titulo {
+    color: var(--azul-medio);
+    font-weight: 100;
+    font-size: 21px;
+    border-style: solid ;
+    border-color: red;
+    border-width: 1px;
+    padding: 5px;
+    justify-content: end;
+    margin: auto;
+    margin-top: 20px;
+    animation: border-animation 0.5s infinite;
+}
+@keyframes border-animation {
+    0% {
+        border-width: 1px;
+    }
+    50% {
+        border-width: 5px;
+    }
+    100% {
+        border-width: 1px;
+    }
+}
 .pesquisar__input {
     width: 260px;
     height: 32px;
